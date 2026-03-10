@@ -1,6 +1,7 @@
 import './App.css';
 import Hello from './component/hello';
-/*import styles from "./app_module.css" */
+/*import styles from "./app_module.css" 
+className = {styles.box} 이런식도 됨*/
 
 
 function App() {
