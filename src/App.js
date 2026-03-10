@@ -1,6 +1,7 @@
 import './App.css';
 import Hello from './component/hello';
 
+
 function App() {
   const name = "tom";
   const naver = {

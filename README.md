@@ -1,6 +1,10 @@
 npx create-react-app my-app으로 시작하기
 npm run start로 사이트 보는 거
 
+https://www.youtube.com/watch?v=0AinoaApDjc&list=PLZKTXPmaJk8J_fHAzPLH8CJ_HO_M33e7-&index=4
+
+3분 35초까지 봄...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
