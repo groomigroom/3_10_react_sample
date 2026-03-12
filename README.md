@@ -41,9 +41,9 @@ DEV Community
 
 이제 github pages로 가서 pages->branch를 gh-pages로 설정하고 save하면 끝
 
-https://www.youtube.com/watch?v=0AinoaApDjc&list=PLZKTXPmaJk8J_fHAzPLH8CJ_HO_M33e7-&index=4
-
-3분 35초까지 봄...
+그리고 codespace로 다시 열었을 때는,
+npm install 후에 npm run start 해야 함,
+수정 후에는 npm run deploy 해야 함.
 
 # Getting Started with Create React App
 
