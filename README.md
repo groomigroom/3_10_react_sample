@@ -1,3 +1,6 @@
+https://ko.react.dev/learn
+자습서 링크
+
 npx create-react-app my-app으로 시작하기
 npm run start로 사이트 보는 거
 
