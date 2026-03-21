@@ -48,6 +48,157 @@ DEV Community
 npm install 후에 npm run start 해야 함,
 수정 후에는 npm run deploy 해야 함.
 
+
+,,,,,,,,
+
+GitHub Codespaces 없이도 **로컬 환경에서 React 프로젝트를 GitHub Pages로 배포**할 수 있어요. `gh-pages` 패키지 사용하는 방식 기준으로 단계별로 설명할게요.
+
+---
+
+## 1️⃣ `gh-pages` 설치
+
+프로젝트 루트에서 실행:
+
+```bash
+npm install gh-pages --save-dev
+```
+
+---
+
+## 2️⃣ `package.json` 설정
+
+### (1) `homepage` 추가
+
+👉 배포될 URL 지정
+
+```json
+"homepage": "https://<github-username>.github.io/<repository-name>"
+```
+
+예:
+
+```json
+"homepage": "https://myname.github.io/my-react-app"
+```
+
+---
+
+### (2) `scripts` 수정
+
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
+
+설명:
+
+* `predeploy`: 배포 전에 자동으로 build 실행
+* `deploy`: build 폴더를 gh-pages 브랜치에 업로드
+
+---
+
+## 3️⃣ GitHub 저장소 준비
+
+1. GitHub에 새 레포 생성
+2. 로컬 프로젝트 연결
+
+```bash
+git init
+git remote add origin https://github.com/<username>/<repo>.git
+git add .
+git commit -m "first commit"
+git push -u origin main
+```
+
+---
+
+## 4️⃣ 배포 실행
+
+```bash
+npm run deploy
+```
+
+👉 그러면:
+
+* `gh-pages` 브랜치가 자동 생성됨
+* build 결과가 업로드됨
+
+---
+
+## 5️⃣ GitHub Pages 설정
+
+1. GitHub 레포로 이동
+2. **Settings → Pages**
+3. Source를:
+
+```
+Branch: gh-pages
+Folder: / (root)
+```
+
+로 설정
+
+---
+
+## 6️⃣ 접속 확인
+
+몇 분 후 아래 주소로 접속:
+
+```
+https://<username>.github.io/<repo>
+```
+
+---
+
+## ⚠️ 자주 발생하는 문제
+
+### 🔹 1. CSS/JS 깨짐
+
+👉 `homepage` 경로 틀린 경우
+
+---
+
+### 🔹 2. React Router 사용 시 404
+
+👉 해결 방법:
+
+```bash
+npm install --save-dev gh-pages
+```
+
+그리고 `BrowserRouter` 대신:
+
+```jsx
+<HashRouter>
+```
+
+---
+
+### 🔹 3. 배포 안 될 때
+
+```bash
+npm run build
+```
+
+에서 에러 없는지 먼저 확인
+
+---
+
+## 👍 요약
+
+1. `gh-pages` 설치
+2. `homepage` 설정
+3. `deploy script` 추가
+4. `npm run deploy` 실행
+5. GitHub Pages에서 `gh-pages` 브랜치 선택
+
+---
+
+원하면 **Vite 기반 React**, **custom domain 연결**, 또는 **자동 배포(GitHub Actions)**까지도 이어서 알려줄게요.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
